@@ -30,7 +30,6 @@ def rotate(direction, deg):
         else:
             way_point_state.x, way_point_state.y = -1 * way_point_state.y, way_point_state.x
 
-
     elif deg == 270:
         if direction == 'R':
             way_point_state.x, way_point_state.y = -1 * way_point_state.y, way_point_state.x
@@ -46,18 +45,15 @@ def forward(num):
 
 moves = ['N', 'S', 'E', 'W']
 rots = ['L', 'R']
-dirs = {0: 'N',  1:'E', 2:'S', 3:'W'}
 
 class way_point_state:
     x = 10
     y = 1
 
-
 class ship_state:
     x = 0
     y = 0
-    #north = 0, east = 1, south = 2, west = 3
-    dr = 1
+
 
 for ln in lines:
     action, num = ln[0], int(ln[1:])
@@ -70,5 +66,6 @@ for ln in lines:
     
     else:
         forward(num)
+
 
 print(abs(ship_state.x) + abs(ship_state.y))
